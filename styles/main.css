@@ -1,0 +1,280 @@
+/* Font Family */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap');
+
+/* Colors */
+:root {
+	--dark-purple: rgb(36, 6, 62);
+	--davy-grey: rgb(88, 77, 98);
+	--white: rgb(255, 255, 255);
+	--eucaplyptus: rgb(68, 255, 161);
+	--ghost-white: rgb(253, 250, 255);
+}
+
+/* CSS Reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+	margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+	isolation: isolate;
+}
+
+/* Utilities */
+/* Primary Button Design */
+button {
+	background-color: var(--eucaplyptus);
+	border: 2px solid var(--eucaplyptus);
+	padding: 1rem;
+	border-radius: 0.25rem;
+	transition: ease-in-out;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: var(--dark-purple);
+	color: var(--eucaplyptus);
+	border-color: var(--eucaplyptus);
+}
+
+.button-secondary {
+	border: none;
+	border-radius: 0;
+	border-bottom: 2px solid var(--eucaplyptus);
+	color: var(--white);
+	background-color: transparent;
+	transition: border-width 0.3s ease;
+}
+
+.button-secondary:hover {
+	cursor: pointer;
+	color: var(--eucaplyptus);
+}
+
+/* Styling */
+
+/* Mobile */
+
+/* Main Body */
+body {
+	font-family: 'Fraunces', serif;
+}
+
+/* Header Section*/
+header {
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	padding: 1rem;
+	align-items: center;
+}
+
+header,
+.hero {
+	background-color: var(--dark-purple);
+	color: var(--white);
+}
+
+/* Hero Section */
+.hero {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	text-align: center;
+	justify-content: space-evenly;
+	row-gap: 1rem;
+	padding: 2rem;
+	/* Curved Background */
+	border-bottom-left-radius: 200% 20%;
+	border-bottom-right-radius: 200% 20%;
+}
+
+.hero h1 {
+	font-weight: 600;
+	font-size: 2.5rem;
+}
+
+.image-container {
+	padding: 1rem;
+}
+
+.hero .image-container {
+	margin-bottom: -40%;
+}
+
+/* Features Section */
+.features {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: var(--ghost-white);
+	padding: 10rem 0 3rem 0;
+	padding-bottom: 3rem;
+
+	/* Curved Background */
+	border-bottom-left-radius: 150% 15%;
+	border-bottom-right-radius: 150% 15%;
+}
+
+.feature-container {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+	row-gap: 1rem;
+	margin: 1rem;
+}
+
+.feature-container > span {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	border: 1px solid black;
+	width: 45px;
+	height: 45px;
+	border-radius: 100%;
+}
+
+/* Introduction Section */
+.introduction,
+.text-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: column;
+	background-color: var(--white);
+}
+
+.introduction .image-container {
+	padding: 3rem;
+	padding-bottom: 0;
+	margin-bottom: -12%;
+}
+
+.text-container {
+	background-color: var(--dark-purple);
+	color: var(--white);
+	padding: 2rem;
+	font-weight: 400;
+	margin: 0 1rem;
+	row-gap: 1rem;
+	text-align: center;
+	text-wrap: wrap;
+}
+
+.text-container h3 {
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+/* Footer Section */
+footer {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 1rem;
+	max-height: fit-content;
+}
+
+footer > * {
+	margin: 1rem;
+}
+
+footer .socials {
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+}
+
+footer .socials > * {
+	margin: 1rem;
+}
+
+/* Tablet */
+@media (min-width: 620px) {
+	.introduction {
+		flex-flow: row;
+		align-items: flex-end;
+		border: 1px solid black;
+	}
+	.introduction .image-container {
+		border: 1px solid black;
+		padding: 0;
+		margin: 0;
+		position: relative;
+	}
+
+	.introduction .image-container img {
+		object-fit: contain;
+	}
+
+	.introduction .text-container {
+		align-items: flex-start;
+		text-align: left;
+	}
+	.introduction .text-container button {
+		padding: 0.5rem;
+	}
+}
+
+/* Desktop */
